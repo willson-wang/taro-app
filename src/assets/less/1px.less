@@ -1,0 +1,95 @@
+.border_base {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: left top;
+    pointer-events: none; /* 防止点击触发 */
+  }
+
+  @media only screen {
+    @media (min-device-pixel-ratio: 2) {
+      &::after {
+        width: 200%;
+        height: 200%;
+        transform: scale(.5);
+      }
+    }
+  }
+
+  @media only screen {
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      &::after {
+        width: 200%;
+        height: 200%;
+        transform: scale(.5);
+      }
+
+    }
+  }
+
+  @media only screen and (min-device-pixel-ratio: 3) {
+    &::after {
+      width: 300%;
+      height: 300%;
+      transform: scale(.333);
+    }
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    &::after {
+      width: 300%;
+      height: 300%;
+      transform: scale(.333);
+    }
+  }
+}
+
+.border_1px(@color: #ccc) {
+  .border_base;
+  &::after {
+    border: 1PX solid @color;
+  }
+}
+
+.border_1px_top(@color: #ccc) {
+  .border_base;
+  &::after {
+    border-top: 1PX solid @color;
+  }
+}
+
+.border_1px_bottom(@color: #ccc) {
+  .border_base;
+  &::after {
+    border-bottom: 1PX solid @color;
+  }
+}
+
+.border_1px_left(@color: #ccc) {
+  .border_base;
+  &::after {
+    border-left: 1PX solid @color;
+  }
+}
+
+.border_1px_right(@color: #ccc) {
+  .border_base;
+  &::after {
+    border-right: 1PX solid @color;
+  }
+}
+
+
+
+
+
+
+
+
+
